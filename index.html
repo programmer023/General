@@ -16,10 +16,6 @@
             text-align: left;
             padding: 8px;
         }
-
-        /*tr:nth-child(even) {
-            background-color: #dddddd;
-        }*/
     </style>
 </head>
 <body ng-app="InvoiceApp" ng-cloak>
@@ -361,10 +357,10 @@
             .controller('InvoiceControl', function ($scope) {
 				
 				$scope.saveInitialFakeData = function () {
-                    localStorage.sellerName= '';//'DHVANIT ENTERPRISE',
+                    localStorage.sellerName= 'Tejas Wooden Furniture';//'DHVANIT ENTERPRISE',
                     localStorage.sellerAddressLine1= '';//'B9, Ambika Tenament,',
                     localStorage.sellerAddressLine2= '';//'Near New Jaspark Society,',
-                    localStorage.sellerAddressLine3= '';//'Isanpur, Ahmedabad -380008,',
+                    localStorage.sellerAddressLine3= 'Bhavnagar';//'Isanpur, Ahmedabad -380008,',
                     localStorage.sellerGSTIN= '';//'24AKSPM8985A1ZO',
 					localStorage.sellerMobile = '';//'24AKSPM8985A1ZO',
 					
@@ -1032,7 +1028,7 @@
                                                 fontSize: 11,
 												alignment :'justify',
                                                 border: [true, false, false, true],
-                                                text: "Declaration:\n1. Labour charges only.\n 2. Subject to Ahmedabad Jurisdiction.\n3. Advance 50% payment is required.",
+                                                text: "Declaration:\n1. Labour charges only.\n 2. Subject to Bhavnagar Jurisdiction.\n3. Advance 50% payment is required.",
                                             },
                                             { text: "", border: [false, false, false, true] },
 											{ text: "", border: [false, false, false, true] },
