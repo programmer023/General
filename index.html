@@ -361,12 +361,12 @@
             .controller('InvoiceControl', function ($scope) {
 				
 				$scope.saveInitialFakeData = function () {
-                    localStorage.sellerName= 'GAURANG M. MISTRI';//'DHVANIT ENTERPRISE',
-                    localStorage.sellerAddressLine1= 'DEF';//'B9, Ambika Tenament,',
-                    localStorage.sellerAddressLine2= 'GHI';//'Near New Jaspark Society,',
-                    localStorage.sellerAddressLine3= 'JKL';//'Isanpur, Ahmedabad -380008,',
-                    localStorage.sellerGSTIN= '123QWE';//'24AKSPM8985A1ZO',
-					localStorage.sellerMobile = '98989898XX';//'24AKSPM8985A1ZO',
+                    localStorage.sellerName= '';//'DHVANIT ENTERPRISE',
+                    localStorage.sellerAddressLine1= '';//'B9, Ambika Tenament,',
+                    localStorage.sellerAddressLine2= '';//'Near New Jaspark Society,',
+                    localStorage.sellerAddressLine3= '';//'Isanpur, Ahmedabad -380008,',
+                    localStorage.sellerGSTIN= '';//'24AKSPM8985A1ZO',
+					localStorage.sellerMobile = '';//'24AKSPM8985A1ZO',
 					
                     //TODO remove values
                     localStorage.buyerName= 'XYZ';//'BIRD INK',
@@ -391,9 +391,9 @@
 					
                     buyerName: '',//localStorage.buyerName,//
                     buyerAddressLine1: '',//localStorage.buyerAddressLine1,
-                    buyerAddressLine2: 'Ahmedabad',//localStorage.buyerAddressLine2,
-                    buyerAddressLine3: '380008',//localStorage.buyerAddressLine3,//
-					buyerGSTIN : 'ABCDEF',//localStorage.buyerGSTIN,//
+                    buyerAddressLine2: 'Bhavnagar',//localStorage.buyerAddressLine2,
+                    buyerAddressLine3: '364001',//localStorage.buyerAddressLine3,//
+					buyerGSTIN : '',//localStorage.buyerGSTIN,//
 
                     //Invioce details
                     invoiceNo: localStorage.invoiceNo,//'GST/002/18-19',
@@ -554,8 +554,8 @@
                     var formatString = "";
                     for (var i = 0; i < $scope.products.length; i++) {
 						//var igstStr = " ; IGST " + $scope.products[i].igstPer + "% = " + $scope.formatNumber(($scope.products[i].igstPer / 100) * $scope.products[i].rateQuantity * $scope.products[i].sql * $scope.products[i].sqb);
-						<!-- var cgstStr = "; C " + $scope.products[i].cgstPer + "%= " + $scope.formatNumber(($scope.products[i].cgstPer / 100) * $scope.products[i].rateQuantity); -->
-						<!-- var sgstStr = "S " + $scope.products[i].sgstPer + "%= " + $scope.formatNumber(($scope.products[i].sgstPer / 100) * $scope.products[i].rateQuantity); -->
+						//<!-- var cgstStr = "; C " + $scope.products[i].cgstPer + "%= " + $scope.formatNumber(($scope.products[i].cgstPer / 100) * $scope.products[i].rateQuantity); -->
+						//<!-- var sgstStr = "S " + $scope.products[i].sgstPer + "%= " + $scope.formatNumber(($scope.products[i].sgstPer / 100) * $scope.products[i].rateQuantity); -->
 						
 						//var taxStr= sgstStr + cgstStr;// + igstStr;
 						
@@ -677,10 +677,10 @@
                     //debugger;
                     var dd = {
                         content: [
-                            <!-- {  -->
-								<!-- text: $scope.user.billType,  -->
-								<!-- style: 'subheader'  -->
-							<!-- }, -->
+                            // <!-- {  -->
+							// 	<!-- text: $scope.user.billType,  -->
+							// 	<!-- style: 'subheader'  -->
+							// <!-- }, -->
                             {
                                 style: 'tableExample',
                                 color: 'black',
@@ -692,74 +692,74 @@
                                     headerRows: 0,
                                     // keepWithHeaderRows: 1,
                                     body: [
-                                        <!-- [ -->
-                                            <!-- { -->
-                                                <!-- bold: true, -->
-                                                <!-- fontSize: 13, -->
-                                                <!-- text: $scope.user.sellerName + '\n' + $scope.user.sellerAddressLine1 + '\n' + $scope.user.sellerAddressLine2 + '\n' + $scope.user.sellerAddressLine3 + '\nGSTIN : ' + $scope.user.sellerGSTIN, -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- rowSpan: 3 -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: 'Invoice No.\n' + $scope.user.invoiceNo -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- text: 'Dated\n' + $scope.formatDate($scope.user.invoiceDate) -->
-                                            <!-- }, -->
-                                            <!-- '' -->
-                                        <!-- ], -->
-                                        <!-- [ -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: 'Delivery Note\n' + $scope.user.deliveryNote -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- text: 'Mode/Terms of Payment\n' + $scope.user.modeTermsOfPayment -->
-                                            <!-- }, -->
-                                            <!-- '' -->
-                                        <!-- ], -->
-                                        <!-- [ -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: "Supplier's Ref.\n" + $scope.user.suppliersRef -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- text: 'Other Reference(s)\n' + $scope.user.otherRef -->
-                                            <!-- }, -->
-                                            <!-- '' -->
-                                        <!-- ], -->
-										<!-- [ -->
-											<!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-											<!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- //bold: true, -->
-                                                <!-- fontSize: 13, -->
-												<!-- color: 'blue', -->
-                                                <!-- text: '9913511071',//☎ $scope.user.sellerName + '\n', -->
-                                                <!-- colSpan: 7, -->
-												<!-- alignment:'right', -->
-                                                <!-- //rowSpan: 4s -->
-                                            <!-- } -->
-                                        <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- bold: true, -->
+                                        //         <!-- fontSize: 13, -->
+                                        //         <!-- text: $scope.user.sellerName + '\n' + $scope.user.sellerAddressLine1 + '\n' + $scope.user.sellerAddressLine2 + '\n' + $scope.user.sellerAddressLine3 + '\nGSTIN : ' + $scope.user.sellerGSTIN, -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- rowSpan: 3 -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 3, -->
+                                        //         <!-- text: 'Invoice No.\n' + $scope.user.invoiceNo -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- text: 'Dated\n' + $scope.formatDate($scope.user.invoiceDate) -->
+                                        //     <!-- }, -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 3, -->
+                                        //         <!-- text: 'Delivery Note\n' + $scope.user.deliveryNote -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- text: 'Mode/Terms of Payment\n' + $scope.user.modeTermsOfPayment -->
+                                        //     <!-- }, -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 3, -->
+                                        //         <!-- text: "Supplier's Ref.\n" + $scope.user.suppliersRef -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- text: 'Other Reference(s)\n' + $scope.user.otherRef -->
+                                        //     <!-- }, -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
+										// <!-- [ -->
+										// 	<!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+										// 	<!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- //bold: true, -->
+                                        //         <!-- fontSize: 13, -->
+										// 		<!-- color: 'blue', -->
+                                        //         <!-- text: '9913511071',//☎ $scope.user.sellerName + '\n', -->
+                                        //         <!-- colSpan: 7, -->
+										// 		<!-- alignment:'right', -->
+                                        //         <!-- //rowSpan: 4s -->
+                                        //     <!-- } -->
+                                        // <!-- ], -->
 										[
 											{
 												text: $scope.user.sellerGSTIN ? 'PAN : ' + $scope.user.sellerGSTIN : '', 
@@ -819,7 +819,7 @@
                                                 bold: true,
                                                 fontSize: 11,
 												color: 'blue',
-                                                text: 'ALL KINDS OF WOODEN FURNITURE, ALUMINIUM WINDOW & PROFILE SHUTTER.',//$scope.user.sellerName + '\n',
+                                                text: 'ALL KINDS OF WOODEN FURNITURE',//$scope.user.sellerName + '\n',
                                                 colSpan: 7,
 												alignment:'center',
 												border: [true, false, true, true],//left,top,right, boottom
@@ -832,24 +832,24 @@
                                             '',
                                             ''
                                         ],
-										[
-                                            {
-                                                //bold: true,
-                                                fontSize: 11,
-												color: 'blue',
-                                                text: 'SHED-C12, Devashray Industrial Park, Opp Suraj Auto, Nr Under Bridge, B/H GIDC Ph4, Vatva, Ahmedabad',//$scope.user.sellerName + '\n',
-                                                colSpan: 7,
-												alignment:'center',
-												lineHeight:0.5,
-                                                //rowSpan: 4
-                                            },
-                                            '',
-                                            '',
-                                            '',
-											'',
-                                            '',
-                                            ''
-                                        ],
+										// [
+                                        //     {
+                                        //         //bold: true,
+                                        //         fontSize: 11,
+										// 		color: 'blue',
+                                        //         text: 'SHED-C12, Devashray Industrial Park, Opp Suraj Auto, Nr Under Bridge, B/H GIDC Ph4, Vatva, Ahmedabad',//$scope.user.sellerName + '\n',
+                                        //         colSpan: 7,
+										// 		alignment:'center',
+										// 		lineHeight:0.5,
+                                        //         //rowSpan: 4
+                                        //     },
+                                        //     '',
+                                        //     '',
+                                        //     '',
+										// 	'',
+                                        //     '',
+                                        //     ''
+                                        // ],
 										[
                                             {
                                                 //bold: true,
@@ -862,10 +862,10 @@
                                             },
                                             '',
 											'',
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: "Buyer's Order No.\n" + $scope.user.buyersOrderNo -->
-                                            <!-- }, -->
+                                            // <!-- { -->
+                                            //     <!-- colSpan: 3, -->
+                                            //     <!-- text: "Buyer's Order No.\n" + $scope.user.buyersOrderNo -->
+                                            // <!-- }, -->
                                             '',
                                             '',
                                             {
@@ -874,70 +874,70 @@
                                             },
                                             ''
                                         ],
-                                        <!-- [ -->
-                                            <!-- { -->
-                                                <!-- bold: true, -->
-                                                <!-- fontSize: 13, -->
-                                                <!-- text: 'Buyer details:\n' + $scope.user.buyerName + '\n' + $scope.user.buyerAddressLine1 +  -->
-                                                    <!-- '\n' + $scope.user.buyerAddressLine2 + -->
-                                                    <!-- '\n' + $scope.user.buyerAddressLine3, -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- rowSpan: 4 -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: "Buyer's Order No.\n" + $scope.user.buyersOrderNo -->
-                                            <!-- }, -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- { -->
-                                                <!-- colSpan: 2, -->
-                                                <!-- text: 'Dated\n' + $scope.formatDate($scope.user.buyersOrderNoDated) -->
-                                            <!-- }, -->
-                                            <!-- '' -->
-                                        <!-- ], -->
-                                        <!-- [ -->
-                                            <!-- { -->
-                                                <!-- colSpan: 7, -->
-                                                <!-- text: '', -->
-												<!-- border: [false, false, false, false], -->
-												<!-- lineHeight : 1 -->
-                                            <!-- }, -->
-											<!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-											<!-- '', -->
-                                            <!-- '' -->
-                                        <!-- ],[ -->
-                                            <!-- { -->
-                                                <!-- colSpan: 7, -->
-                                                <!-- text: '', -->
-												<!-- border: [false, false, false, false], -->
-												<!-- lineHeight : 1 -->
-                                            <!-- }, -->
-											<!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-											<!-- '', -->
-                                            <!-- '' -->
-                                        <!-- ], -->
-										<!-- [ -->
-                                            <!-- { -->
-                                                <!-- colSpan: 7, -->
-                                                <!-- text: '', -->
-												<!-- border: [false, false, false, false], -->
-												<!-- lineHeight : 1 -->
-                                            <!-- }, -->
-											<!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-                                            <!-- '', -->
-											<!-- '', -->
-                                            <!-- '' -->
-                                        <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- bold: true, -->
+                                        //         <!-- fontSize: 13, -->
+                                        //         <!-- text: 'Buyer details:\n' + $scope.user.buyerName + '\n' + $scope.user.buyerAddressLine1 +  -->
+                                        //             <!-- '\n' + $scope.user.buyerAddressLine2 + -->
+                                        //             <!-- '\n' + $scope.user.buyerAddressLine3, -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- rowSpan: 4 -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 3, -->
+                                        //         <!-- text: "Buyer's Order No.\n" + $scope.user.buyersOrderNo -->
+                                        //     <!-- }, -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 2, -->
+                                        //         <!-- text: 'Dated\n' + $scope.formatDate($scope.user.buyersOrderNoDated) -->
+                                        //     <!-- }, -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 7, -->
+                                        //         <!-- text: '', -->
+										// 		<!-- border: [false, false, false, false], -->
+										// 		<!-- lineHeight : 1 -->
+                                        //     <!-- }, -->
+										// 	<!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+										// 	<!-- '', -->
+                                        //     <!-- '' -->
+                                        // <!-- ],[ -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 7, -->
+                                        //         <!-- text: '', -->
+										// 		<!-- border: [false, false, false, false], -->
+										// 		<!-- lineHeight : 1 -->
+                                        //     <!-- }, -->
+										// 	<!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+										// 	<!-- '', -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
+										// <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 7, -->
+                                        //         <!-- text: '', -->
+										// 		<!-- border: [false, false, false, false], -->
+										// 		<!-- lineHeight : 1 -->
+                                        //     <!-- }, -->
+										// 	<!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+                                        //     <!-- '', -->
+										// 	<!-- '', -->
+                                        //     <!-- '' -->
+                                        // <!-- ], -->
                                         [
 											{text:'No.', bold:true},
 											{text:'Particulars', bold:true},
@@ -970,15 +970,15 @@
                                                 bold: true
                                             }                                            
                                         ],
-										<!-- [ -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] } -->
-                                        <!-- ], -->
+										// <!-- [ -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] } -->
+                                        // <!-- ], -->
 										[
                                             {
                                                 colSpan: 4,
@@ -1010,22 +1010,22 @@
                                             { text: "", border: [false, false, false, false] },
                                             { text: "", border: [false, false, false, false] } ////left,top,right, boottom
                                         ],
-                                        <!-- [ -->
-                                            <!-- { -->
-                                                <!-- colSpan: 5, -->
-												<!-- bold: true, -->
-                                                <!-- fontSize: 12, -->
-												<!-- alignment :'justify', -->
-                                                <!-- border: [true, false, false, false], -->
-                                                <!-- text: "\nSeller PAN No. : " + "AQKPM2908H", -->
-                                            <!-- }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, false, false] }, -->
-                                            <!-- { text: "", border: [false, false, true, false] } -->
-                                        <!-- ], -->
+                                        // <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 5, -->
+										// 		<!-- bold: true, -->
+                                        //         <!-- fontSize: 12, -->
+										// 		<!-- alignment :'justify', -->
+                                        //         <!-- border: [true, false, false, false], -->
+                                        //         <!-- text: "\nSeller PAN No. : " + "AQKPM2908H", -->
+                                        //     <!-- }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, false, false] }, -->
+                                        //     <!-- { text: "", border: [false, false, true, false] } -->
+                                        // <!-- ], -->
 										[
                                             {
                                                 colSpan: 3,												
@@ -1047,22 +1047,22 @@
 											{ text: "", border: [false, false, false, false] },
 											{ text: "", border: [false, false, false, false] },
                                         ]
-                                        <!-- [ -->
-                                            <!-- { -->
-                                                <!-- colSpan: 3, -->
-                                                <!-- text: "", -->
-                                                <!-- border: [true, false, false, true] -->
-                                            <!-- }, -->
-                                            <!-- "", -->
-                                            <!-- "", -->
-                                            <!-- { -->
-                                                <!-- colSpan: 4, -->
-                                                <!-- bold: true, -->
-                                                <!-- alignment: 'right', -->
-                                                <!-- text: "for " + $scope.user.sellerName +"\n\n\nAuthorized Signatury", -->
-                                                <!-- border: [true, true, true, true] -->
-                                            <!-- } -->
-                                        <!-- ] -->
+                                        // <!-- [ -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 3, -->
+                                        //         <!-- text: "", -->
+                                        //         <!-- border: [true, false, false, true] -->
+                                        //     <!-- }, -->
+                                        //     <!-- "", -->
+                                        //     <!-- "", -->
+                                        //     <!-- { -->
+                                        //         <!-- colSpan: 4, -->
+                                        //         <!-- bold: true, -->
+                                        //         <!-- alignment: 'right', -->
+                                        //         <!-- text: "for " + $scope.user.sellerName +"\n\n\nAuthorized Signatury", -->
+                                        //         <!-- border: [true, true, true, true] -->
+                                        //     <!-- } -->
+                                        // <!-- ] -->
                                     ]
                                 }
                             },
